@@ -1,4 +1,33 @@
 @charset "UTF-8";
+.loader-div {
+  width: 100vw;
+  height: 100vh;
+  background-color: aliceblue;
+  text-align: center;
+}
+
+.loader-svg {
+  position: relative;
+  top: 7em;
+  width: 20em;
+  height: 20em;
+}
+
+.str0 {
+  fill: none;
+  stroke: #29ABE2;
+  stroke-miterlimit: 9;
+  stroke-dasharray: 12.2685, 12.2685;
+}
+
+.str1 {
+  fill: #29ABE2;
+}
+
+.str2 {
+  fill: #ffffff;
+}
+
 body {
   font-size: 25px;
   font-family: Calibre, "San Francisco", "SF Pro Text", -apple-system, system-ui, BlinkMacSystemFont, Roboto, "Helvetica Neue", "Segoe UI", Arial, sans-serif;
@@ -47,6 +76,65 @@ body {
 }
 .header .nav-toggle {
   display: none;
+}
+
+.cont-div {
+  width: 2em;
+  position: fixed;
+  bottom: 0;
+  right: auto;
+  left: 0.5em;
+  z-index: 3;
+}
+.cont-div ul {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 0;
+  padding: 0;
+}
+.cont-div ul li {
+  margin-bottom: 2em;
+}
+.cont-div ul li a {
+  color: #4e4444;
+}
+.cont-div ul::after {
+  content: "";
+  width: 1px;
+  margin: 0 auto;
+  display: block;
+  height: 9em;
+  background-color: #4e4444;
+}
+
+.email-div {
+  width: 2em;
+  position: fixed;
+  bottom: 0;
+  right: 0.5em;
+  left: auto;
+  z-index: 3;
+}
+.email-div div {
+  width: fit-content;
+  margin: 0 auto;
+}
+.email-div div a {
+  text-decoration: none;
+  writing-mode: vertical-rl;
+  font-size: 0.7em;
+  letter-spacing: 0.1em;
+  color: #4e4444;
+}
+.email-div div::after {
+  content: "";
+  display: block;
+  width: 1px;
+  height: 5em;
+  margin: 0 auto;
+  background-color: #4e4444;
 }
 
 .active {
@@ -119,7 +207,8 @@ body {
   margin: 1em;
   border: 1px solid white;
   padding: 1em;
-  color: white;
+  color: black;
+  background-color: white;
   cursor: pointer;
 }
 
@@ -329,6 +418,14 @@ body {
 
   .whblue {
     background-color: transparent;
+  }
+
+  .email-div {
+    display: none;
+  }
+
+  .cont-div {
+    display: none;
   }
 }
 @media screen and (min-width: 1200px) {

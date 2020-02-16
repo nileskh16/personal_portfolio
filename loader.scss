@@ -1,0 +1,28 @@
+.loader-div {
+    width: 100vw;
+    height: 100vh;
+    background-color: aliceblue;
+    text-align: center;
+}
+
+.loader-svg {
+    position: relative;
+    top: 7em;
+    width: 20em;
+    height: 20em;
+}
+
+.str0 {
+    fill: none;
+    stroke: #29ABE2;
+    stroke-miterlimit: 9;
+    stroke-dasharray: 12.2685,12.2685;
+}
+
+.str1 {
+    fill: #29ABE2;
+}
+
+.str2 {
+    fill: #ffffff;
+}
