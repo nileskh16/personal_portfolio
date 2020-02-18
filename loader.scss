@@ -1,3 +1,12 @@
+@mixin getSpinnerCircle($strokeWidth: 7, $strokeColor: white) {
+    stroke: $strokeColor;
+    stroke-width: $strokeWidth;
+    stroke-miterlimit: 10;
+    stroke-linecap: round;
+    stroke-linejoin: round;
+    fill: none;
+}
+
 .loader-div {
     width: 100vw;
     height: 100vh;
@@ -8,8 +17,8 @@
 .loader-svg {
     position: relative;
     top: 7em;
-    width: 20em;
-    height: 20em;
+    width: 5em;
+    height: 5em;
 }
 
 .str0 {
@@ -25,4 +34,42 @@
 
 .str2 {
     fill: #ffffff;
+}
+
+#spinner-svg {
+    animation: spin 3s linear infinite;
+}
+
+#circ {
+    animation: stretch 1s linear infinite;
+}
+
+.spinner-circ1 {
+    @include getSpinnerCircle(10, #29ABE2);
+}
+
+.spinner-circ2 {
+    @include getSpinnerCircle(7, white);
+}
+
+@keyframes spin {
+    from {
+        transform: rotate(0);
+    }
+
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+@keyframes stretch {
+    0% {
+        stroke-dasharray:0,500;
+		stroke-dashoffset:-500;
+    }
+
+    100% {
+        stroke-dasharray:500,500;
+		stroke-dashoffset:500;
+    }
 }

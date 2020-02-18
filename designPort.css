@@ -9,8 +9,8 @@
 .loader-svg {
   position: relative;
   top: 7em;
-  width: 20em;
-  height: 20em;
+  width: 5em;
+  height: 5em;
 }
 
 .str0 {
@@ -28,6 +28,50 @@
   fill: #ffffff;
 }
 
+#spinner-svg {
+  animation: spin 3s linear infinite;
+}
+
+#circ {
+  animation: stretch 1s linear infinite;
+}
+
+.spinner-circ1 {
+  stroke: #29ABE2;
+  stroke-width: 10;
+  stroke-miterlimit: 10;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+  fill: none;
+}
+
+.spinner-circ2 {
+  stroke: white;
+  stroke-width: 7;
+  stroke-miterlimit: 10;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+  fill: none;
+}
+
+@keyframes spin {
+  from {
+    transform: rotate(0);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+@keyframes stretch {
+  0% {
+    stroke-dasharray: 0, 500;
+    stroke-dashoffset: -500;
+  }
+  100% {
+    stroke-dasharray: 500, 500;
+    stroke-dashoffset: 500;
+  }
+}
 body {
   font-size: 25px;
   font-family: Calibre, "San Francisco", "SF Pro Text", -apple-system, system-ui, BlinkMacSystemFont, Roboto, "Helvetica Neue", "Segoe UI", Arial, sans-serif;
