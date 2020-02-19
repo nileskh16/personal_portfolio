@@ -1,3 +1,4 @@
+@import './mixins.scss';
 @import './loader.scss';
 
 $def-font-family: "SF Mono", "Fira Code", "Fira Mono", "Roboto Mono", "Lucida Console", Monaco, monospace;
@@ -7,26 +8,6 @@ $fixDivColor: #4e4444;
 body {
     font-size: 25px;
     font-family: $home-font-family;
-}
-
-@mixin smoothNav($borderColor:#f8f8f8) {
-    border-bottom: 0.1em solid $borderColor;
-    transition: all 0.5s ease;
-}
-
-@mixin getCircular($width:240px) {
-    width: $width;
-    height: $width;
-    border-radius: $width;
-}
-
-@mixin getFixedDivStyle($width: 2em, $right:auto, $left: auto) {
-    width: $width;
-    position: fixed;
-    bottom: 0;
-    right: $right;
-    left: $left;
-    z-index: 3;
 }
 
 .header {
@@ -221,7 +202,7 @@ body {
     margin: 0 auto;
 
     &:nth-child(odd) {
-        background-color: lightgrey;
+        background-color: #fbfbfb;
     }
 
     &::nth-child(even) {
@@ -278,24 +259,7 @@ body {
 
     ul {
         margin-left: -1.5em;
-        list-style: none;
-        font-size: 0.8em;
-
-        li {
-            position: relative;
-            padding-left: 0.8em;
-            margin-bottom: 0.4em;
-            font-size: 0.8em;
-        }
-
-        li:before {
-            content: "▹";
-            position: absolute;
-            left: 0;
-            font-size: 0.9em;
-            line-height: 0.6em;
-            color: #010101;
-        }
+        @include getLiStyle();
     }
 }
 
@@ -365,6 +329,10 @@ body {
 
 .tr-bg {
     background-color: transparent;
+}
+
+.awards-list {
+    @include getLiStyle();
 }
 
 .toggle-prime {

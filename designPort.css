@@ -278,7 +278,7 @@ body {
   margin: 0 auto;
 }
 .info-sec:nth-child(odd) {
-  background-color: lightgrey;
+  background-color: #fbfbfb;
 }
 .info-sec::nth-child(even) {
   background-color: #f1f1f1;
@@ -335,11 +335,11 @@ body {
 }
 .tab-info ul li {
   position: relative;
-  padding-left: 0.8em;
+  padding-left: 1.2em;
   margin-bottom: 0.4em;
   font-size: 0.8em;
 }
-.tab-info ul li:before {
+.tab-info ul li:after {
   content: "▹";
   position: absolute;
   left: 0;
@@ -409,6 +409,25 @@ body {
 
 .tr-bg {
   background-color: transparent;
+}
+
+.awards-list {
+  list-style: none;
+  font-size: 0.8em;
+}
+.awards-list li {
+  position: relative;
+  padding-left: 1.2em;
+  margin-bottom: 0.4em;
+  font-size: 0.8em;
+}
+.awards-list li:after {
+  content: "▹";
+  position: absolute;
+  left: 0;
+  font-size: 0.9em;
+  line-height: 0.6em;
+  color: #010101;
 }
 
 .toggle-prime {

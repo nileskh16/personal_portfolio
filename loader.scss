@@ -1,11 +1,4 @@
-@mixin getSpinnerCircle($strokeWidth: 7, $strokeColor: white) {
-    stroke: $strokeColor;
-    stroke-width: $strokeWidth;
-    stroke-miterlimit: 10;
-    stroke-linecap: round;
-    stroke-linejoin: round;
-    fill: none;
-}
+@import './mixins.scss';
 
 .loader-div {
     width: 100vw;

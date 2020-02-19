@@ -57,8 +57,8 @@
             linkId: "#link-contact"
         },
         {
-            secId: "#recentwork",
-            linkId: "#link-recent"
+            secId: "#recognitions",
+            linkId: "#link-recog"
         },
         {
             secId: "#experience",

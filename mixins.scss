@@ -1,0 +1,49 @@
+@mixin smoothNav($borderColor:#f8f8f8) {
+    border-bottom: 0.1em solid $borderColor;
+    transition: all 0.5s ease;
+}
+
+@mixin getCircular($width:240px) {
+    width: $width;
+    height: $width;
+    border-radius: $width;
+}
+
+@mixin getFixedDivStyle($width: 2em, $right:auto, $left: auto) {
+    width: $width;
+    position: fixed;
+    bottom: 0;
+    right: $right;
+    left: $left;
+    z-index: 3;
+}
+
+@mixin getSpinnerCircle($strokeWidth: 7, $strokeColor: white) {
+    stroke: $strokeColor;
+    stroke-width: $strokeWidth;
+    stroke-miterlimit: 10;
+    stroke-linecap: round;
+    stroke-linejoin: round;
+    fill: none;
+}
+
+@mixin getLiStyle($liContentColr: #010101) {
+    list-style: none;
+    font-size: 0.8em;
+
+    li {
+        position: relative;
+        padding-left: 1.2em;
+        margin-bottom: 0.4em;
+        font-size: 0.8em;
+    }
+
+    li:after {
+        content: "▹";
+        position: absolute;
+        left: 0;
+        font-size: 0.9em;
+        line-height: 0.6em;
+        color: $liContentColr;
+    }
+}
