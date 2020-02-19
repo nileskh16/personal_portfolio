@@ -1,39 +1,9 @@
 (function () {
 
-    $.fn.isVisible = function () {
-        let element = $(this);
-        let elTop = element.offset().top;
-        let elBottom = elTop + element.outerHeight();
-        let viewTop = $(window).scrollTop();
-        let viewBottom = viewTop + $(window).height();
-        return elBottom > viewTop && elTop < viewBottom;
-    }
-
-    var allSections = [
-        {
-            secId: "#contact",
-            linkId: "#link-contact"
-        },
-        {
-            secId: "#recentwork",
-            linkId: "#link-recent"
-        },
-        {
-            secId: "#experience",
-            linkId: "#link-edu"
-        },
-        {
-            secId: "#aboutme",
-            linkId: "#link-about"
-        },
-        {
-            secId: "#prime-section",
-            linkId: null
-        }
-    ];
-
     $('body').ready(function () {
         applyClassChanges();
+
+        hideLoader();
 
         $('#navbar li').each(function (el) {
             $(this).click(function (event) {
@@ -71,6 +41,38 @@
             });
         });
     });
+
+    $.fn.isVisible = function () {
+        let element = $(this);
+        let elTop = element.offset().top;
+        let elBottom = elTop + element.outerHeight();
+        let viewTop = $(window).scrollTop();
+        let viewBottom = viewTop + $(window).height();
+        return elBottom > viewTop && elTop < viewBottom;
+    }
+
+    var allSections = [
+        {
+            secId: "#contact",
+            linkId: "#link-contact"
+        },
+        {
+            secId: "#recentwork",
+            linkId: "#link-recent"
+        },
+        {
+            secId: "#experience",
+            linkId: "#link-edu"
+        },
+        {
+            secId: "#aboutme",
+            linkId: "#link-about"
+        },
+        {
+            secId: "#prime-section",
+            linkId: null
+        }
+    ];
 
     $(window).on(`scroll resize`, function () {
         applyClassChanges();
@@ -138,5 +140,21 @@
         });
 
         $('#navdiv').toggleClass("tr-bg");
+    }
+
+    function hideLoader() {
+        let contentDiv = $("#contentdiv");
+        if (contentDiv) {
+            contentDiv.hide();
+        }
+        window.setTimeout(() => {
+            let loaderDiv = $("#loaderdiv");
+            if (loaderDiv) {
+                loaderDiv.hide();
+            }
+            if (contentDiv) {
+                contentDiv.show();
+            }
+        }, 3000);
     }
 })();

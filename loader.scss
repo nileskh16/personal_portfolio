@@ -10,8 +10,15 @@
 .loader-div {
     width: 100vw;
     height: 100vh;
-    background-color: aliceblue;
     text-align: center;
+    padding: 2em 0;
+
+    h2 {
+        position: relative;
+        top: 4em;
+        color: #4d4c55;
+        animation: blink 1s linear infinite
+    }
 }
 
 .loader-svg {
@@ -71,5 +78,15 @@
     100% {
         stroke-dasharray:500,500;
 		stroke-dashoffset:500;
+    }
+}
+
+@keyframes blink {
+    0% {
+        opacity: 0.1;
+    }
+
+    100% {
+        opacity: 1;
     }
 }
