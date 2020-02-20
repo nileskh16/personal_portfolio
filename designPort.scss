@@ -147,7 +147,7 @@ body {
     padding: 0 1em;
 
     h2 {
-        color: navy;
+        @include getH2Style();
     }
 
     p {
@@ -191,6 +191,11 @@ body {
         color: black;
         background-color: white;
         cursor: pointer;
+    }
+
+    h2::after {
+        content: "";
+        display: none;
     }
 }
 
@@ -341,6 +346,36 @@ body {
 
 .toggle-info {
     color: blue;
+}
+
+.facts-div {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    width: 80%;
+    margin: 0 auto;
+    flex-wrap: wrap;
+
+    h2 {
+        @include getH2Style();
+    }
+
+    div {
+        flex-grow: 1;
+        text-align: center;
+        margin: 0.5em 0;
+
+        span {
+            font-size: 2em;
+            color: #e96618;
+            border-bottom: 1px solid;
+        }
+
+        p {
+            margin-top: 0.3em;
+        }
+    }
 }
 
 @media screen and (max-width: 768px) {

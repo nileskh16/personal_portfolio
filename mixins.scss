@@ -47,3 +47,16 @@
         color: $liContentColr;
     }
 }
+
+@mixin getH2Style() {
+    color: navy;
+
+    &::after {
+        content: "";
+        position: absolute;
+        display: block;
+        width: 2em;
+        margin: 0.3em auto;
+        border: 2px double #e96618;
+    }
+}

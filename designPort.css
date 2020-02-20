@@ -231,6 +231,14 @@ body {
 .div-wrap h2 {
   color: navy;
 }
+.div-wrap h2::after {
+  content: "";
+  position: absolute;
+  display: block;
+  width: 2em;
+  margin: 0.3em auto;
+  border: 2px double #e96618;
+}
 .div-wrap p {
   font-size: 0.7em;
 }
@@ -268,6 +276,10 @@ body {
   color: black;
   background-color: white;
   cursor: pointer;
+}
+#prime-div h2::after {
+  content: "";
+  display: none;
 }
 
 .info-sec {
@@ -436,6 +448,29 @@ body {
 
 .toggle-info {
   color: blue;
+}
+
+.facts-div {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  width: 80%;
+  margin: 0 auto;
+  flex-wrap: wrap;
+}
+.facts-div div {
+  flex-grow: 1;
+  text-align: center;
+  margin: 0.5em 0;
+}
+.facts-div div span {
+  font-size: 2em;
+  color: #e96618;
+  border-bottom: 1px solid;
+}
+.facts-div div p {
+  margin-top: 0.3em;
 }
 
 @media screen and (max-width: 768px) {
