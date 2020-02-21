@@ -60,3 +60,61 @@
         border: 2px double #e96618;
     }
 }
+
+@mixin  getFlexDivStyle() {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    align-content: center;
+    flex-wrap: wrap;
+    margin: 3em auto;
+    width: 80%;
+}
+
+@mixin getKeyFrame($percentage) {
+    $i: 0;
+    @each $width in $percentage {
+        @keyframes animate_skill_#{$i} {
+            0% {
+                transform: scaleX(0.1);
+                transform-origin: left;
+            }
+        
+            25% {
+                transform: scaleX(0.3);
+                transform-origin: left;
+            }
+        
+            50% {
+                transform: scaleX(0.5);
+                transform-origin: left;
+            }
+        
+            75% {
+                transform: scaleX(0.75);
+                transform-origin: left;
+            }
+        
+            100% {
+                transform: scaleX(1);
+                transform-origin: left;
+            }
+        }
+        $i: $i + 1;
+    }
+}
+
+@mixin getFadeInAnim() {
+    @keyframes fadeIn {
+        0% {
+            opacity: 0;
+            transform: translate3d(0, 100%, 0);
+        }
+
+        100% {
+            opacity: 1;
+            transform: none;
+        }
+    }
+}

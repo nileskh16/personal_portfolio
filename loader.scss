@@ -1,3 +1,4 @@
+@import './variables.scss';
 @import './mixins.scss';
 
 .loader-div {
@@ -9,7 +10,7 @@
     h2 {
         position: relative;
         top: 4em;
-        color: #4d4c55;
+        color: $loaderh2Color;
         animation: blink 1s linear infinite
     }
 }
@@ -23,17 +24,17 @@
 
 .str0 {
     fill: none;
-    stroke: #29ABE2;
+    stroke: $loaderCircle;
     stroke-miterlimit: 9;
     stroke-dasharray: 12.2685,12.2685;
 }
 
 .str1 {
-    fill: #29ABE2;
+    fill: $loaderCircle;
 }
 
 .str2 {
-    fill: #ffffff;
+    fill: $loaderFillColor;
 }
 
 #spinner-svg {
@@ -45,11 +46,11 @@
 }
 
 .spinner-circ1 {
-    @include getSpinnerCircle(10, #29ABE2);
+    @include getSpinnerCircle(10, $loaderCircle);
 }
 
 .spinner-circ2 {
-    @include getSpinnerCircle(7, white);
+    @include getSpinnerCircle(7, $loaderFillColor);
 }
 
 @keyframes spin {

@@ -1,0 +1,86 @@
+@import './variables.scss';
+@import './mixins.scss';
+
+$percentage: (80, 70, 70, 60, 75, 72);
+@include getKeyFrame($percentage);
+
+.facts-div {
+    @include getFlexDivStyle();
+
+    h2 {
+        @include getH2Style();
+    }
+
+    div {
+        flex-grow: 1;
+        text-align: center;
+        margin: 0.5em 0;
+
+        i {
+            display: block;
+            font-size: 2em;
+        }
+
+        span {
+            font-size: 2em;
+            color: $skillFontColor;
+            border-bottom: 1px solid;
+        }
+
+        p {
+            margin-top: 1.3em;
+        }
+    }
+}
+
+.skills-div {
+    @include getFlexDivStyle();
+
+    .section-div {
+        flex-grow: 1;
+        margin: 0.5em 0;
+    }
+
+    #divvcc {
+        width: 80%;
+        animation: animate_skill_0 2s 1s linear;
+    }
+
+    #divc {
+        width: 70%;
+        animation: animate_skill_1 2s 1s linear;
+    }
+ 
+    #divmfc {
+        width: 70%;
+        animation: animate_skill_2 2s 1s linear;
+    }
+
+    #divpy {
+        width: 60%;
+        animation: animate_skill_3 2s 1s linear;
+    }
+
+    #divsql {
+        width: 75%;
+        animation: animate_skill_4 2s 1s linear;
+    }
+
+    #divmfcdb {
+        width: 72%;
+        animation: animate_skill_5 2s 1s linear;
+    }
+}
+
+.outer-div {
+    margin: 1em 0;
+    border-radius: 0.2em;
+    border: 1px solid $skillBarBorderColor;
+}
+
+.inner-div {
+    padding: 0.3em;
+    background-color: $skillFontColor;
+    border-radius: 0.2em;
+    color: white;
+}

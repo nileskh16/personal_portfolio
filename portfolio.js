@@ -1,8 +1,6 @@
 (function () {
 
     $('body').ready(function () {
-        applyClassChanges();
-
         hideLoader();
 
         $('#navbar li').each(function (el) {
@@ -57,6 +55,10 @@
             linkId: "#link-contact"
         },
         {
+            secId: "#skills",
+            linkId: "#link-skills"
+        },
+        {
             secId: "#recognitions",
             linkId: "#link-recog"
         },
@@ -73,6 +75,8 @@
             linkId: null
         }
     ];
+
+    var isShown = false;
 
     $(window).on(`scroll resize`, function () {
         applyClassChanges();
@@ -94,6 +98,7 @@
             handlePrimeInfoSec(true);
         }
         checkActiveLink();
+        initCounterEls();
     }
 
     function handlePrimeInfoSec(isPrime) {
@@ -154,7 +159,27 @@
             }
             if (contentDiv) {
                 contentDiv.show();
+                applyClassChanges();
             }
         }, 3000);
+    }
+
+    function initCounterEls() {
+        if ($("#factsdiv").isVisible() && !isShown) {
+            $('.counter').each(function() {
+                $({
+                    Counter: 0
+                }).animate({
+                    Counter: $(this).text()
+                }, {
+                    duration: 5000,
+                    easing: 'swing',
+                    step: (now) => {
+                        $(this).text(Math.ceil(now));
+                    }
+                })
+            });
+            isShown = true;
+        }
     }
 })();

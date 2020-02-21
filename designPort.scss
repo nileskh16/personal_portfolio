@@ -1,12 +1,12 @@
+@import './variables.scss';
 @import './mixins.scss';
 @import './loader.scss';
+@import './skillset.scss';
 
-$def-font-family: "SF Mono", "Fira Code", "Fira Mono", "Roboto Mono", "Lucida Console", Monaco, monospace;
-$home-font-family: Calibre, "San Francisco", "SF Pro Text", -apple-system, system-ui, BlinkMacSystemFont, Roboto, "Helvetica Neue", "Segoe UI", Arial, sans-serif;
-$fixDivColor: #4e4444;
+@include getFadeInAnim();
 
 body {
-    font-size: 25px;
+    font-size: $bodyFontSize;
     font-family: $home-font-family;
 }
 
@@ -26,7 +26,7 @@ body {
     }
 
     nav {
-        width: 80%;
+        width: 95%;
         position: relative;
         transform: translate3d(0, 0, 0);
         -webkit-transform: translate3d(0, 0, 0);
@@ -122,20 +122,20 @@ body {
 
 .porto-img {
     @include getCircular(10em);
-    border: 0.2em solid #f1f1f1;
+    border: 0.2em solid $borderColor;
 }
 
 .whblue {
-    background-color: #f8f8f8;
+    background-color: $whBackgroundColor;
     .active {
-        @include smoothNav(#1200ff);
+        @include smoothNav($whActiveLink);
     }
     .list-item {
         a {
             color: blue !important;
         }
         &:hover {
-            @include smoothNav(#1200ff);
+            @include smoothNav($whActiveLink);
         }
     }
 }
@@ -145,6 +145,10 @@ body {
     max-width: 1600px;
     margin: 0 auto;
     padding: 0 1em;
+    animation-duration: 1s;
+    animation-fill-mode: both;
+    animation-name: fadeIn;
+    animation-delay: 0.5s;
 
     h2 {
         @include getH2Style();
@@ -174,7 +178,7 @@ body {
             left: 0;
             font-size: 0.7em;
             line-height: 0.6em;
-            color: #010101;
+            color: $liAfterColor;
         }
     }
 }
@@ -188,7 +192,7 @@ body {
         margin: 1em;
         border: 1px solid white;
         padding: 1em;
-        color: black;
+        color: $liAfterColor;
         background-color: white;
         cursor: pointer;
     }
@@ -200,27 +204,27 @@ body {
 }
 
 .info-sec {
-    border-bottom: 1px solid #0e62e0;
+    border-bottom: 1px solid $sectionBorderColor;
     text-align: left;
     padding: 5em 0;
     width: 90%;
     margin: 0 auto;
 
     &:nth-child(odd) {
-        background-color: #fbfbfb;
+        background-color: $oddBgColor;
     }
 
     &::nth-child(even) {
-        background-color: #f1f1f1;
+        background-color: $borderColor;
     }
 }
 
 .prime-sec {
-    border-bottom: 1px solid #f1f1f1;
+    border-bottom: 1px solid $borderColor;
     text-align: center;
     padding: 7.5em 0;
     background-size: cover;
-    background: #1200ff url("./cover_photo_11.jpeg") 50% 65% no-repeat fixed;
+    background: url("./cover_photo_11.jpeg") 50% 65% no-repeat fixed;
     margin-bottom: 0.5em;
     width: 90%;
     margin: 0 auto;
@@ -248,12 +252,12 @@ body {
     }
 
     button:hover {
-        background-color: #d1d1d1;
+        background-color: $tabBgColor;
     }
 
     .btn-active {
-        background-color: #cccccc;
-        border: 0.2em solid #e48431e6;
+        background-color: $tabActiveColor;
+        border: 0.2em solid $skillFontColor;
     }
 }
 
@@ -273,11 +277,11 @@ body {
 }
 
 .pos-span {
-    color: #969696;
+    color: $posTextColor;
     a {
         text-decoration: none;
         cursor: pointer;
-        color: #969696;
+        color: $posTextColor;
     }
 }
 
@@ -313,7 +317,7 @@ body {
         font-size: 0.8em;
         a {
             text-decoration: none;
-            color: #2f49d0;
+            color: $whActiveLink;
             font-weight: bold;
         }
     }
@@ -325,7 +329,7 @@ body {
 }
 
 .nav-div-sm-prime {
-    background-color: #291a18;
+    background-color: $minNavBgColor;
 }
 
 .nav-div-sm-info {
@@ -346,36 +350,6 @@ body {
 
 .toggle-info {
     color: blue;
-}
-
-.facts-div {
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-    align-items: center;
-    width: 80%;
-    margin: 0 auto;
-    flex-wrap: wrap;
-
-    h2 {
-        @include getH2Style();
-    }
-
-    div {
-        flex-grow: 1;
-        text-align: center;
-        margin: 0.5em 0;
-
-        span {
-            font-size: 2em;
-            color: #e96618;
-            border-bottom: 1px solid;
-        }
-
-        p {
-            margin-top: 0.3em;
-        }
-    }
 }
 
 @media screen and (max-width: 768px) {
