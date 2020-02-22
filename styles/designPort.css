@@ -86,117 +86,7 @@
     opacity: 1;
   }
 }
-@keyframes animate_skill_0 {
-  0% {
-    transform: scaleX(0.1);
-    transform-origin: left;
-  }
-  25% {
-    transform: scaleX(0.3);
-    transform-origin: left;
-  }
-  50% {
-    transform: scaleX(0.5);
-    transform-origin: left;
-  }
-  75% {
-    transform: scaleX(0.75);
-    transform-origin: left;
-  }
-  100% {
-    transform: scaleX(1);
-    transform-origin: left;
-  }
-}
-@keyframes animate_skill_1 {
-  0% {
-    transform: scaleX(0.1);
-    transform-origin: left;
-  }
-  25% {
-    transform: scaleX(0.3);
-    transform-origin: left;
-  }
-  50% {
-    transform: scaleX(0.5);
-    transform-origin: left;
-  }
-  75% {
-    transform: scaleX(0.75);
-    transform-origin: left;
-  }
-  100% {
-    transform: scaleX(1);
-    transform-origin: left;
-  }
-}
-@keyframes animate_skill_2 {
-  0% {
-    transform: scaleX(0.1);
-    transform-origin: left;
-  }
-  25% {
-    transform: scaleX(0.3);
-    transform-origin: left;
-  }
-  50% {
-    transform: scaleX(0.5);
-    transform-origin: left;
-  }
-  75% {
-    transform: scaleX(0.75);
-    transform-origin: left;
-  }
-  100% {
-    transform: scaleX(1);
-    transform-origin: left;
-  }
-}
-@keyframes animate_skill_3 {
-  0% {
-    transform: scaleX(0.1);
-    transform-origin: left;
-  }
-  25% {
-    transform: scaleX(0.3);
-    transform-origin: left;
-  }
-  50% {
-    transform: scaleX(0.5);
-    transform-origin: left;
-  }
-  75% {
-    transform: scaleX(0.75);
-    transform-origin: left;
-  }
-  100% {
-    transform: scaleX(1);
-    transform-origin: left;
-  }
-}
-@keyframes animate_skill_4 {
-  0% {
-    transform: scaleX(0.1);
-    transform-origin: left;
-  }
-  25% {
-    transform: scaleX(0.3);
-    transform-origin: left;
-  }
-  50% {
-    transform: scaleX(0.5);
-    transform-origin: left;
-  }
-  75% {
-    transform: scaleX(0.75);
-    transform-origin: left;
-  }
-  100% {
-    transform: scaleX(1);
-    transform-origin: left;
-  }
-}
-@keyframes animate_skill_5 {
+@keyframes animate_skills {
   0% {
     transform: scaleX(0.1);
     transform-origin: left;
@@ -273,27 +163,21 @@
 }
 .skills-div #divvcc {
   width: 80%;
-  animation: animate_skill_0 2s 1s linear;
 }
 .skills-div #divc {
   width: 70%;
-  animation: animate_skill_1 2s 1s linear;
 }
 .skills-div #divmfc {
   width: 70%;
-  animation: animate_skill_2 2s 1s linear;
 }
 .skills-div #divpy {
   width: 60%;
-  animation: animate_skill_3 2s 1s linear;
 }
 .skills-div #divsql {
   width: 75%;
-  animation: animate_skill_4 2s 1s linear;
 }
 .skills-div #divmfcdb {
   width: 72%;
-  animation: animate_skill_5 2s 1s linear;
 }
 
 .outer-div {
@@ -307,6 +191,10 @@
   background-color: #e96618;
   border-radius: 0.2em;
   color: white;
+}
+
+.animated {
+  animation: animate_skills 2s 1s linear;
 }
 
 @keyframes fadeIn {
@@ -538,7 +426,7 @@ body {
   text-align: center;
   padding: 7.5em 0;
   background-size: cover;
-  background: url("./cover_photo_11.jpeg") 50% 65% no-repeat fixed;
+  background: url("../assets/images/cover_photo_11.jpeg") 50% 65% no-repeat fixed;
   margin-bottom: 0.5em;
   width: 90%;
   margin: 0 auto;
@@ -759,5 +647,3 @@ body {
     width: 70%;
   }
 }
-
-/*# sourceMappingURL=designPort.css.map */

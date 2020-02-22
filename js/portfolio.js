@@ -78,6 +78,8 @@
 
     var isShown = false;
 
+    var areSkillsShown = false;
+
     $(window).on(`scroll resize`, function () {
         applyClassChanges();
     });
@@ -165,6 +167,13 @@
     }
 
     function initCounterEls() {
+        if ($("#skills").isVisible() && !areSkillsShown) {
+            $(".inner-div").each(function() {
+                $(this).addClass("animated");
+            });
+            areSkillsShown = true;
+        }
+
         if ($("#factsdiv").isVisible() && !isShown) {
             $('.counter').each(function() {
                 $({
@@ -172,7 +181,7 @@
                 }).animate({
                     Counter: $(this).text()
                 }, {
-                    duration: 5000,
+                    duration: 3000,
                     easing: 'swing',
                     step: (now) => {
                         $(this).text(Math.ceil(now));

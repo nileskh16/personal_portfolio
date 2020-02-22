@@ -1,8 +1,7 @@
 @import './variables.scss';
 @import './mixins.scss';
 
-$percentage: (80, 70, 70, 60, 75, 72);
-@include getKeyFrame($percentage);
+@include getKeyFrame();
 
 .facts-div {
     @include getFlexDivStyle();
@@ -43,32 +42,26 @@ $percentage: (80, 70, 70, 60, 75, 72);
 
     #divvcc {
         width: 80%;
-        animation: animate_skill_0 2s 1s linear;
     }
 
     #divc {
         width: 70%;
-        animation: animate_skill_1 2s 1s linear;
     }
  
     #divmfc {
         width: 70%;
-        animation: animate_skill_2 2s 1s linear;
     }
 
     #divpy {
         width: 60%;
-        animation: animate_skill_3 2s 1s linear;
     }
 
     #divsql {
         width: 75%;
-        animation: animate_skill_4 2s 1s linear;
     }
 
     #divmfcdb {
         width: 72%;
-        animation: animate_skill_5 2s 1s linear;
     }
 }
 
@@ -83,4 +76,8 @@ $percentage: (80, 70, 70, 60, 75, 72);
     background-color: $skillFontColor;
     border-radius: 0.2em;
     color: white;
+}
+
+.animated {
+    animation: animate_skills 2s 1s linear;
 }

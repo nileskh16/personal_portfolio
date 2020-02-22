@@ -72,36 +72,32 @@
     width: 80%;
 }
 
-@mixin getKeyFrame($percentage) {
-    $i: 0;
-    @each $width in $percentage {
-        @keyframes animate_skill_#{$i} {
-            0% {
-                transform: scaleX(0.1);
-                transform-origin: left;
-            }
-        
-            25% {
-                transform: scaleX(0.3);
-                transform-origin: left;
-            }
-        
-            50% {
-                transform: scaleX(0.5);
-                transform-origin: left;
-            }
-        
-            75% {
-                transform: scaleX(0.75);
-                transform-origin: left;
-            }
-        
-            100% {
-                transform: scaleX(1);
-                transform-origin: left;
-            }
+@mixin getKeyFrame() {
+    @keyframes animate_skills {
+        0% {
+            transform: scaleX(0.1);
+            transform-origin: left;
         }
-        $i: $i + 1;
+    
+        25% {
+            transform: scaleX(0.3);
+            transform-origin: left;
+        }
+    
+        50% {
+            transform: scaleX(0.5);
+            transform-origin: left;
+        }
+    
+        75% {
+            transform: scaleX(0.75);
+            transform-origin: left;
+        }
+    
+        100% {
+            transform: scaleX(1);
+            transform-origin: left;
+        }
     }
 }
 
