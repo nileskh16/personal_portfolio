@@ -184,6 +184,7 @@
   margin: 1em 0;
   border-radius: 0.2em;
   border: 1px solid #dad5d5;
+  line-height: 0.7em;
 }
 
 .inner-div {
@@ -197,6 +198,14 @@
   animation: animate_skills 2s 1s linear;
 }
 
+@media screen and (max-width: 720px) {
+  .facts-div {
+    flex-direction: column;
+  }
+  .facts-div div {
+    margin: 1em 0;
+  }
+}
 @keyframes fadeIn {
   0% {
     opacity: 0;
@@ -210,6 +219,10 @@
 body {
   font-size: 25px;
   font-family: Calibre, "San Francisco", "SF Pro Text", -apple-system, system-ui, BlinkMacSystemFont, Roboto, "Helvetica Neue", "Segoe UI", Arial, sans-serif;
+}
+body i:hover {
+  transform: scale(1.5);
+  transition: all 0.5s ease-in;
 }
 
 .header {

@@ -69,6 +69,7 @@
     margin: 1em 0;
     border-radius: 0.2em;
     border: 1px solid $skillBarBorderColor;
+    line-height: 0.7em;
 }
 
 .inner-div {
@@ -80,4 +81,13 @@
 
 .animated {
     animation: animate_skills 2s 1s linear;
+}
+
+@media screen and (max-width: 720px) {
+    .facts-div {
+        flex-direction: column;
+        div {
+            margin: 1em 0;
+        }
+    }
 }
